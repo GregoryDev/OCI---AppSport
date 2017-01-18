@@ -9,6 +9,9 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "fr.istic.oci"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "fr.istic.oci"
         }
     },
     "dependent_plugins": {}
