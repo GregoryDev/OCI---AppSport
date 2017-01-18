@@ -6,13 +6,5 @@
         },
         "is_top_level": true,
         "variables": {}
-    },
-    "cordova-plugin-indexedDB": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-indexeddb"
-        },
-        "is_top_level": true,
-        "variables": {}
     }
 }
