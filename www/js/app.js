@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	function initialize(){		
-    	$("#create_event").hide();
+    	$("#div_create_event").hide();
     	$("#desc_event").hide();
     	$("#listing_event").hide();
 	}
@@ -17,6 +17,11 @@ $(document).ready(function() {
 		initialize();
 		$("#div_create_event").show();		
 	});
+
+	$("#foot").click(function(){
+		initialize();
+		$("#desc_event");
+	})
 
     //On submit create event form
     //TODO: ranger ca dans la bdd
