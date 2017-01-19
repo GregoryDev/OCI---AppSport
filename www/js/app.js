@@ -7,6 +7,10 @@ $(document).ready(function() {
     });
     $("#create_event").hide();
         
+    function clickFoot(){
+    	$("#listing").hide();
+    	$("desc_event").show();
+    }
 
     document.addEventListener('deviceready', function() {
         myDB = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
