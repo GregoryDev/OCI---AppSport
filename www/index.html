@@ -32,48 +32,48 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
-<<<<<<< HEAD
-        <link rel="stylesheet" href="css/materialize.min.css">
-=======
->>>>>>> 387a83e0e1a2bdddcf3f6ad1e77e29ebf4189571
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <title>AppSport</title>
     </head>
     <body>
 
         <nav>
-<<<<<<< HEAD
-            <div class="nav-wrapper teal">
-                <img src="" alt="Logo" class="brand-logo" width="50" height="50">
-            </div>
-        </nav>
-=======
             <div class="navbar navbar-inverse">
                 <img src="" alt="Logo" class="brand-logo" width="50" height="50">
             </div>
         </nav>
 
->>>>>>> 387a83e0e1a2bdddcf3f6ad1e77e29ebf4189571
         <!--
             Formulaire création evenement
         -->
-        <div id="div_create_event">
+        <div id="div_create_event"  class="form-group">
             <form name="create_event" id="create_event" action="index.html" method="post"> 
-                <label for="nom_event">Nom Evenenemt :</label>
-                <input type="text" name="nom_event" id="nom_event" placeholder="" size="30" maxlength="10" required/></br>
-                <label for="date">Date :</label>
-                <input type="date" name="date_event" id="date_event" required /></br>
-                <label for="nbPlace_event">Nombre de places :</label>
-                <input type="text" name="nbPlace_event" id="nbPlace_event" placeholder="" size="30" maxlength="10"required /></br>
-                <label for="nom_event">Prix :</label>
-                <input type="text" name="prix_event" id="prix_event" placeholder="" size="30" maxlength="10" required/></br>
-                <label for="description_event">Description :</label></br>
-                <textarea rows="4" cols="50">
-                </textarea></br> 
-                <input type="submit" value="submit">
+                <div  class="form-group" >
+                    <label for="nom_event" >Nom Evenenemt :</label>
+                    <input type="text" name="nom_event" id="nom_event" class="form-control" size="30" maxlength="10" required/>
+                </div>
+                <div  class="form-group" >
+                    <label for="date">Date :</label>
+                    <input type="date" name="date_event" id="date_event" class="form-control" required />
+                </div>
+                <div  class="form-group" >
+                    <label for="nbPlace_event">Nombre de places :</label>
+                    <input type="text" name="nbPlace_event" id="nbPlace_event" class="form-control" size="30" maxlength="10"required />
+                </div>
+                <div  class="form-group" >
+                    <label for="nom_event">Prix :</label>
+                    <input type="text" name="prix_event" id="prix_event"class="form-control" size="30" maxlength="10" required/>
+                </div>
+                <div  class="form-group" >
+                    <label for="description_event">Description :</label>
+                    <textarea rows="4" cols="50"class="form-control">
+                    </textarea>
+                </div>
+                <div  class="form-group" >
+                    <input type="submit" value="submit" class="btn btn-block btn-success">
+                </div>
             </form>
         </div>
-<<<<<<< HEAD
 
 
         <!--
@@ -137,13 +137,12 @@
     </form>
     </div>
           
-=======
         <div id="desc_event">
-            <h1>
+            <h1 class="bg-success">
                 Nom Evenement
             </h1>
             <p>
-                Date    Prix    nbPlaces
+            Date    Prix    nbPlaces
             </p>
             <span>
                 Description activité
@@ -210,7 +209,6 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
->>>>>>> 387a83e0e1a2bdddcf3f6ad1e77e29ebf4189571
 
     </body>
 </html>
