@@ -10,6 +10,9 @@ a.btn {
 .margin {
   margin: 25px 15px !important; 
 }
+nav {
+	text-align: center;
+}
 ul {
 	list-style-type: none;
 }

@@ -30,8 +30,10 @@ $(document).ready(function() {
 	$("#menuBtn").click(function(){
 		if(open){
 			$("#menu").hide();
+			open = false;
 		} else {
 			$("#menu").show();
+			open = true;
 		}
 	})
 
