@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 	$("#foot").click(function(){
 		initialize();
-		$("#desc_event");
+		$("#desc_event").show();
 	})
 
     //On submit create event form
@@ -29,10 +29,5 @@ $(document).ready(function() {
     $("#create_event").submit(function( event ) {
           //alert( "Handler for .submit() called." );
     });
-        
-    function clickFoot(){
-    	$("#listing").hide();
-    	$("#desc_event").show();
-    }
 
 });
