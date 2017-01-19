@@ -85,7 +85,18 @@
 
         <div id="div_create_user">
             <form name="create_user" id="create_user" action="index.html" method="post"> 
-                <div  class="form-group" >
+                
+       <div class="form-group"> 
+         <label>Type:</label>
+           <select class="form-control">
+        	     <option value="" disabled selected>Chooisir le type</option>
+    		     <option value="1">Utilisateur</option>
+      		     <option value="2">Organisation</option>
+      		    
+      	</select>       
+      		 </div>
+		
+		<div  class="form-group" >
                     <label for="first_name">Pseudo</label>
                     <input id="pseudo" type="text" class="form-control" >          
                 </div>
@@ -188,6 +199,61 @@
 
             </ul>
         </div>
+
+        <!--
+            Formulaire Inscription Organisation
+        -->
+
+
+     <div id="div_create_organisation">
+     <form name="create_organisation" id="create_organisation" action="index.html" method="post"> 
+         
+        <div class="form-group">
+          <label for="first_name">Nom de l'organisation</label>
+          <input id="nom_organisation" type="text" class="form-control">          
+        </div>
+
+        <div class="form-group">
+          <label for="nom_responsable">Nom Responsable</label>
+          <input  id="" type="text" class="form-control">
+          
+        </div>
+       <div class="form-group">
+          <label for="first_name">Membres</label>
+          <input  id="membres" type="text" class="form-control">
+          
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" class="form-control">
+          
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input id="password" type="password" class="form-control">
+          
+        </div>
+     
+
+        <div class="form-group">
+          <label for="password">Confirmer mot de passe</label>
+          <input id="confirm-password" type="password" class="form-control" >
+          
+        </div>  
+<div class="form-group">
+     <p>
+      <input type="checkbox" id="test5" class="form-control" />
+      <label for="test5">Privée</label>
+    
+      <input type="checkbox" id="test6" checked="checked" class="form-control"/>
+      <label for="test6">Etatique</label>
+     </p>  
+</div>
+    <input type="submit" value="S'inscrire" class="btn btn-block btn-success">
+    </form>
+    </div>
 
 
         <script type="text/javascript" src="js/jquery.min.js"></script>
