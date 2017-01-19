@@ -2,20 +2,21 @@ $(document).ready(function() {
 
 	alert("TOTO");
 
-	document.addEventListener("deviceready", onDeviceReady, false);
-	function onDeviceReady(){
-	var myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
+	document.addEventListener('deviceready', function() {
+	  myDB = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
+	});
 
-		myDB.transaction(function(transaction) {
-			transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
-			function(tx, result) {
-				alert("Table created successfully");
-			},
-			function(error) {
-				alert("Error occurred while creating the table.");
-			});
+	alert("tata");
+	myDB.transaction(function(transaction) {
+		transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
+		function(tx, result) {
+			alert("Table created successfully");
+		},
+		function(error) {
+			alert("Error occurred while creating the table.");
 		});
-	};
+	});
 
+	alert('tutu');
 
 });
