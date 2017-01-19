@@ -8,6 +8,7 @@ $(document).ready(function() {
     	$("#listing_event").hide();
     	$("#div_create_user").hide();
     	$("#menu").hide();
+    	$("#div_create_organisation").hide();
 	}
 
 	initialize();
