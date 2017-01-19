@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 	function initialize(){		
     	$("#div_create_event").hide();
-    	$("#desc_event").hide();
+    	//$("#desc_event").hide();
     	$("#listing_event").hide();
     	$("#div_create_user").hide();
     	$("#menu").hide();
