@@ -1,10 +1,13 @@
 $(document).ready(function() {
 
+	var open = false;
+
 	function initialize(){		
     	$("#div_create_event").hide();
     	$("#desc_event").hide();
     	$("#listing_event").hide();
     	$("#div_create_user").hide();
+    	$("#menu").hide();
 	}
 
 	initialize();
@@ -22,6 +25,14 @@ $(document).ready(function() {
 	$("#foot").click(function(){
 		initialize();
 		$("#desc_event").show();
+	});
+
+	$("#menuBtn").click(function(){
+		if(open){
+			$("#menu").hide();
+		} else {
+			$("#menu").show();
+		}
 	})
 
     //On submit create event form
