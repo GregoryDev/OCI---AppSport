@@ -48,8 +48,8 @@
         <!--
             Formulaire création evenement
         -->
-        <div id="create_event">
-            <form name="create_event" action="index.html" method="post" onsubmit="return myFunction()">
+        <div id="div_create_event">
+            <form name="create_event" id="create_event" action="index.html" method="post"> 
                 <label for="nom_event">Nom Evenenemt :</label>
                 <input type="text" name="nom_event" id="nom_event" placeholder="" size="30" maxlength="10" required/></br>
                 <label for="date">Date :</label>
@@ -64,6 +64,18 @@
                 <input type="submit" value="submit">
             </form>
         </div>
+        <div id="desc_event">
+            <h1>
+                Nom Evenement
+            </h1>
+            <p>
+                Date    Prix    nbPlaces
+            </p>
+            <span>
+                Description activité
+            </span>
+        </div>
+
 
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
