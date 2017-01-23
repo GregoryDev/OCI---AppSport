@@ -11,8 +11,8 @@ $(document).ready(function() {
 
         // Populate the database
         function populateDB(tx) {
-	    console.log("populateDB");
             tx.executeSql('CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, nom_event text, date_event date, nbPlace_event integer, prix_event integer, description_event text)');
+	    tx.executeSql('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, type_user text, pseudo_user text, nom_user text, prenom_user text, email_user text, password_user text)');
         }
 
         // Query the success callback
@@ -23,6 +23,7 @@ $(document).ready(function() {
         // Query the database
         function queryDB(tx) {
             tx.executeSql('SELECT * FROM events', [], querySuccess, errorCB);
+            tx.executeSql('SELECT * FROM users', [], querySuccess, errorCB);
         }
 
         // Transaction error callback

@@ -93,7 +93,7 @@
 
              <div class="form-group"> 
                <label>Type:</label>
-               <select id="select" class="form-control">
+               <select id="type_user" class="form-control">
                   <option value="" disabled selected>Chooisir le type</option>
                   <option value="1">Utilisateur</option>
                   <option value="2">Organisation</option>
@@ -103,35 +103,29 @@
 
           <div  class="form-group" >
             <label for="first_name">Pseudo</label>
-            <input id="pseudo" type="text" class="form-control" >          
+            <input id="pseudo_user" type="text" class="form-control" >          
         </div>
         <div class="form-group" >
             <label for="first_name">Nom</label>
-            <input  id="nom" type="text" class="form-control" >
+            <input  id="nom_user" type="text" class="form-control" >
         </div>
         <div  class="form-group" >
             <label for="first_name">Prenom</label>
-            <input  id="prenom" type="text" class="form-control" >
+            <input  id="prenom_user" type="text" class="form-control" >
         </div>
         <div  class="form-group" >
             <label for="email">Email</label>
-            <input id="email" type="email" class="form-control" >
+            <input id="email_user" type="email" class="form-control" >
         </div>
         <div  class="form-group" >
             <label for="password">Mot de passe</label>
-            <input id="password" type="password" class="form-control">
+            <input id="password_user" type="password" class="form-control">
         </div>
         <div  class="form-group" >
             <label for="password">Confirmer mot de passe</label>
             <input id="confirm-password" type="password" class="form-control" >
-        </div>  
-        <p>
-            <input type="checkbox" id="test5" />
-            <label for="test5">Organisation</label>
-            <input type="checkbox" id="test6" checked="checked" />
-            <label for="test6">Utilisateur</label>
-        </p>  
-        <input type="submit" value="S'inscrire" class="btn btn-block btn-success">
+        </div>
+        <input id="submit_user" type="submit" value="S'inscrire" class="btn btn-block btn-success">
     </form>
 </div>
 
@@ -435,6 +429,7 @@
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/dao.js"></script>
         <script type="text/javascript" src="js/event.js"></script>
+        <script type="text/javascript" src="js/users.js"></script>
 
     </body>
 </html>
