@@ -30,6 +30,9 @@ ul {
 	list-style-type: none;
 }
 li{
+	background-color: #EEE;
+}
+#menu li{
 	background-color: #222;
 	color:white;
 	border: 1px solid #444;
