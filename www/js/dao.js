@@ -11,7 +11,7 @@ $(document).ready(function() {
 
         // Populate the database
         function populateDB(tx) {
-	    //tx.executeSql('DROP TABLE events');
+	    console.log("populateDB");
             tx.executeSql('CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, nom_event text, date_event date, nbPlace_event integer, prix_event integer, description_event text)');
         }
 
