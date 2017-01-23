@@ -16,17 +16,13 @@ $(document).ready(function() {
 
     // Insert user
     $("#submit_inscription").click(function() {
-	var tmp = 'INSERT INTO inscriptions (id_user, id_event) VALUES ("' +
-                    $("#logged").attr("class") +'","'+
-                    $("#desc_event").attr("class") +'")';
-console.log(tmp);
         var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
         db.transaction(insertInscription, errorCB, querySuccess);
     })
     function insertInscription(tx) {
         tx.executeSql('INSERT INTO inscriptions (id_user, id_event) VALUES ("' +
                     $("#logged").attr("class") +'","'+
-                    $("#desc_event").attr("class") +'")',[],function(){console.log('ok')},function(){console.log("echec")} };
+                    $("#desc_event").attr("class") +'")');
     }
 });
 
