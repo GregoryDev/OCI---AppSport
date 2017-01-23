@@ -13,6 +13,7 @@ $(document).ready(function() {
         function populateDB(tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, nom_event text, date_event date, nbPlace_event integer, prix_event integer, description_event text)');
 	    tx.executeSql('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, type_user text, pseudo_user text, nom_user text, prenom_user text, email_user text, password_user text)');
+	    tx.executeSql('CREATE TABLE IF NOT EXISTS inscriptions (id_user integer, id_event integer, primary key(id_user, id_event))');
         }
 
         // Query the success callback
