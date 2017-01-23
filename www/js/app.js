@@ -14,6 +14,10 @@ $(document).ready(function() {
 
 	initialize();
 
+	$("#logo").click(function(){
+		initialize();
+	})
+
 	$("#displayListing").click(function(){
 		initialize();
 		$("#listing_event").show();		
