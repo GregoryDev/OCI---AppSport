@@ -12,7 +12,7 @@ $(document).ready(function() {
         $("#desc_organisation").hide();
         $("#div_recherche_avancee").hide();
         $("#desc_utilisateur").hide();
-	}
+    }
 
     initialize();
 
@@ -59,10 +59,25 @@ $(document).ready(function() {
         }
     })
 
-    //On submit create event form
-    //    //TODO: ranger ca dans la bdd
-    $("#create_event").submit(function( event ) {
-        //alert( "Handler for .submit() called." );
-    });
 
+    function getEvent(id){
+        console.log("getEvent : "+id);
+        var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
+        //db.transaction(getEvents(id), errorCB, querySuccess);
+        db.transaction(function(tx){
+            console.log("getEvents : "+id+"/"+tx);
+            //var query = "Select * FROM events WHERE id='""'";
+            tx.executeSql("Select * FROM events WHERE id=?",[id],querySuccess,errorCB);
+        }
+        , errorCB, querySuccess);
+    }
+
+    function querySuccess(tx, results) {
+        console.log(results);
+    }
+
+    // Transaction error callback
+    function errorCB(err) {
+        alert("Error processing SQL: "+err.code + ": " + err.message);
+    }
 });

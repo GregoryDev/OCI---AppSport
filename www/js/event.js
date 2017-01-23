@@ -34,7 +34,41 @@ $(document).ready(function() {
         var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
         db.transaction(getEvents, errorCB, querySuccess);
     }
-    function insertEvent(tx) {
+    function getEvent(tx) {
+        //var query = "Select * FROM events WHERE id='""'";
+        tx.executeSql("Select * FROM events WHERE id=?",[id]);
+    }
+});
+
+function Event(){
+    this.nom;
+    this.date;
+    this.nbPlace;
+    this.prix;
+    this.description;
+
+    this.set = function(nom,date,nbPlace,prix,descrpition){
+        this.nom = nom;
+        this.date =date;
+        this.nbPlace = nbPlace;
+        this.prix = prix;
+        this.description = description;
+    }
+
+    this.getNom = function(){
+        return this.nom;
+    }
+    this.getDate = function(){
+        return this.date;
+    }
+    this.getnbPlace = function(){
+        return this.nbPlace;
+    }
+    this.getPrix = function(){
+        return this.prix;
+    }
+    this.getDescription = function(){
+        return this.description;
     }
 });
 
