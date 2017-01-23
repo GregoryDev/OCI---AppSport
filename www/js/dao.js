@@ -14,7 +14,6 @@ $(document).ready(function() {
 	    //tx.executeSql('DROP TABLE events');
             tx.executeSql('CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, nom_event text, date_event date, nbPlace_event integer, prix_event integer, description_event text)');
         }
-// 
 
         // Query the success callback
         function querySuccess(tx, results) {
@@ -50,6 +49,5 @@ $(document).ready(function() {
 		document.getElementById("prix_event").value +'","'+
 		document.getElementById("description_event").value+'")');
         }
-	//document.getElementById
 
 });
