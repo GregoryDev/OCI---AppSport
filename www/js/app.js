@@ -9,6 +9,7 @@ $(document).ready(function() {
     	$("#div_create_user").hide();
     	$("#menu").hide();
     	$("#div_create_organisation").hide();
+        $("#desc_organisation").hide();
 	}
 
 	initialize();
