@@ -59,8 +59,8 @@ $(document).ready(function() {
 
     //On submit create event form
     //    //TODO: ranger ca dans la bdd
-    //        $("#create_event").submit(function( event ) {
-    //                  //alert( "Handler for .submit() called." );
-    //                      });
-    //
-    //                      });
+    $("#create_event").submit(function( event ) {
+        //alert( "Handler for .submit() called." );
+    });
+
+});
