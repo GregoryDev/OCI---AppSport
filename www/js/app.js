@@ -13,7 +13,6 @@ $(document).ready(function() {
         $("#div_recherche_avancee").hide();
         $("#desc_utilisateur").hide();
 	}
-    }
 
     initialize();
 
