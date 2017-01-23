@@ -37,7 +37,7 @@ $(document).ready(function() {
 
     $("#select").change(function(){
         initialize();
-        if(('#select').find(":selected").val() == 2)
+        if($('#select option:selected').val() == '2')
             $("#div_create_organisation").show();
         else
             $("#div_create_user").show();
