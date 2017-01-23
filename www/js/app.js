@@ -9,6 +9,7 @@ $(document).ready(function() {
     	$("#div_create_user").hide();
     	$("#menu").hide();
     	$("#div_create_organisation").hide();
+        $("#desc_organisation").hide();
 	}
 
 	initialize();
@@ -22,6 +23,20 @@ $(document).ready(function() {
 		initialize();
 		$("#div_create_event").show();		
 	});
+
+	$("#createOrga").click(function(){
+		initialize();
+		$("#div_create_user").show();
+	});
+
+	$("#select").change(function(){
+		initialize();
+		if(('#select').find(":selected").val() == 2)
+			$("#div_create_organisation").show();
+		else
+			$("#div_create_user").show();
+	});
+
 
 	$("#foot").click(function(){
 		initialize();

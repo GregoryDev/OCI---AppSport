@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+            Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+            Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <title>AppSport</title>
+    </head>
+    <body>
+
+        <nav>
+            <div class="navbar navbar-inverse">
+                <img src="img/logo.png" alt="Logo" class="brand-logo" width="50" height="50">
+            </div>
+        </nav>
+
+        <div class="btn" id="displayCreateEvent">Afficher formulaire</div>
+        <div class="btn" id="displayListing">Afficher liste</div>
+        <!--
+            Formulaire création evenement
+        -->
+        <div id="div_create_event"  class="form-group">
+            <form name="create_event" id="create_event" action="index.html" method="post"> 
+<<<<<<< HEAD
+                <label for="nom_event">Nom Evenenemt :</label>
+                <input type="text" name="nom_event" id="nom_event" placeholder="" size="30" maxlength="10" required/></br>
+                <label for="date">Date :</label>
+                <input type="date" name="date_event" id="date_event" required /></br>
+                <label for="nbPlace_event">Nombre de places :</label>
+                <input type="text" name="nbPlace_event" id="nbPlace_event" placeholder="" size="30" maxlength="10" required /></br>
+                <label for="nom_event">Prix :</label>
+                <input type="text" name="prix_event" id="prix_event" placeholder="" size="30" maxlength="10" required/></br>
+                <label for="description_event">Description :</label></br>
+                <textarea rows="4" cols="50">
+                </textarea></br> 
+                <input type="submit" value="submit">=======
+                <div  class="form-group" >
+                    <label for="nom_event" >Nom Evenenemt :</label>
+                    <input type="text" name="nom_event" id="nom_event" class="form-control" size="30" maxlength="10" required/>
+                </div>
+                <div  class="form-group" >
+                    <label for="date">Date :</label>
+                    <input type="date" name="date_event" id="date_event" class="form-control" required />
+                </div>
+                <div  class="form-group" >
+                    <label for="nbPlace_event">Nombre de places :</label>
+                    <input type="text" name="nbPlace_event" id="nbPlace_event" class="form-control" size="30" maxlength="10"required />
+                </div>
+                <div  class="form-group" >
+                    <label for="nom_event">Prix :</label>
+                    <input type="text" name="prix_event" id="prix_event"class="form-control" size="30" maxlength="10" required/>
+                </div>
+                <div  class="form-group" >
+                    <label for="description_event">Description :</label>
+                    <textarea rows="4" cols="50"class="form-control">
+                    </textarea>
+                </div>
+                <div  class="form-group" >
+                    <input type="submit" value="submit" class="btn btn-block btn-success">
+                </div>
+>>>>>>> bf743d21baa2875d37fc9bb20af2d064e7e3397c
+            </form>
+        </div>
+
+
+        <!--
+            Formulaire Inscription Utilisateur
+        -->
+
+
+     <div id="div_create_user">
+     <form name="create_user" id="create_user" action="index.html" method="post"> 
+         
+        <div >
+          <label for="first_name">Pseudo</label>
+          <input id="pseudo" type="text" >          
+        </div>
+    
+
+        <div >
+          <label for="first_name">Nom</label>
+          <input  id="nom" type="text" >
+          
+        </div>
+
+       <div >
+          <label for="first_name">Prenom</label>
+          <input  id="prenom" type="text" >
+          
+        </div>
+
+
+
+        <div >
+          <label for="email">Email</label>
+          <input id="email" type="email" >
+          
+        </div>
+  
+
+ 
+        <div >
+          <label for="password">Mot de passe</label>
+          <input id="password" type="password" >
+          
+        </div>
+     
+
+        <div >
+          <label for="password">Confirmer mot de passe</label>
+          <input id="confirm-password" type="password" >
+          
+        </div>  
+
+     <p>
+      <input type="checkbox" id="test5" />
+      <label for="test5">Organisation</label>
+    
+      <input type="checkbox" id="test6" checked="checked" />
+      <label for="test6">Utilisateur</label>
+     </p>  
+
+    <input type="submit" value="S'inscrire">
+    </form>
+    </div>
+          
+        <div id="desc_event">
+            <h1 class="bg-success">
+                Nom Evenement
+            </h1>
+            <p>
+            Date    Prix    nbPlaces
+            </p>
+            <span>
+                Description activité
+            </span>
+        </div>
+
+        <div id="listing_event">
+            <ul>
+                <li>
+                    <div class="row" onclick="clickFoot()">
+                        <div class="col-xs-4"><img src=""></div>
+                        <div class="col-xs-8">
+                            <div class="row">
+                                <div class="col-xs-12">Foot en salle 5/5</div>
+                                <div class="col-xs-12">Football</div>
+                                <div class="col-xs-12">12/12/2012</div>
+                                <div class="row">
+                                    <div class="col-xs-6">5*</div>
+                                    <div class="col-xs-6">10€</div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row" onclick="clickDanse()">
+                        <div class="col-xs-4"><img src=""></div>
+                        <div class="col-xs-8">
+                            <div class="row">
+                                <div class="col-xs-12">Cours de salsa</div>
+                                <div class="col-xs-12">Danse</div>
+                                <div class="col-xs-12">13/12/2012</div>
+                                <div class="row">
+                                    <div class="col-xs-6">3*</div>
+                                    <div class="col-xs-6">5€</div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>                
+                <li>
+                    <div class="row" onclick="clickCourse()">
+                        <div class="col-xs-4"><img src=""></div>
+                        <div class="col-xs-8">
+                            <div class="row">
+                                <div class="col-xs-12">Course à pied</div>
+                                <div class="col-xs-12">Fitness</div>
+                                <div class="col-xs-12">12/12/2012</div>
+                                <div class="row">
+                                    <div class="col-xs-6">Pas encore noté</div>
+                                    <div class="col-xs-6">Gratuit</div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+
+    </body>
+</html>
+
