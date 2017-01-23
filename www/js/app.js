@@ -37,7 +37,7 @@ $(document).ready(function() {
 
     $("#select").change(function(){
         initialize();
-        if($('#select option:selected').val() == '2')
+        if(('#select').find(":selected").val() == 2)
             $("#div_create_organisation").show();
         else
             $("#div_create_user").show();
@@ -46,6 +46,7 @@ $(document).ready(function() {
 
     $("#foot").click(function(){
         initialize();
+        getAllEvents();
         $("#desc_event").show();
     });
 
@@ -61,18 +62,38 @@ $(document).ready(function() {
 
 
     function getEvent(id){
-        console.log("getEvent : "+id);
         var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
-        //db.transaction(getEvents(id), errorCB, querySuccess);
         db.transaction(function(tx){
             console.log("getEvents : "+id+"/"+tx);
-            //var query = "Select * FROM events WHERE id='""'";
             tx.executeSql("Select * FROM events WHERE id=?",[id],querySuccess,errorCB);
         }
-        , errorCB, querySuccess);
+        , errorCB, transacSuccess);
     }
 
+    function getAllEvents(){
+        var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
+        db.transaction(function(tx){
+            tx.executeSql("Select * FROM events",[],querySuccessAll,errorCB);
+        }
+        , errorCB, transacSuccess);
+    }
+
+    //Todo: Gerer resultat query
+    function querySuccessAll(tx,results){
+        $.each(results.rows,function(i,e){
+            console.log("res : "+e.nom_event);
+        });
+    }
+
+    //Todo: Gerer resultat query
     function querySuccess(tx, results) {
+        $.each(results.rows,function(i,e){
+            console.log("res : "+e.nom_event);
+        });
+    }
+
+    //Transaction error callback
+    function transacSuccess(tx, results){
         console.log(results);
     }
 

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
     // Query the success callback
     function querySuccess(tx, results) {
         console.log(results);
@@ -71,4 +71,4 @@ function Event(){
         return this.description;
     }
 });
-
+*/
