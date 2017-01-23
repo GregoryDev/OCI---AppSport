@@ -10,6 +10,9 @@ $(document).ready(function() {
         $("#menu").hide();
         $("#div_create_organisation").hide();
         $("#desc_organisation").hide();
+        $("#div_recherche_avancee").hide();
+        $("#desc_utilisateur").hide();
+	}
     }
 
     initialize();
