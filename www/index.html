@@ -26,13 +26,15 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
             * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="description" content="">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/starrr.css">
         <title>AppSport</title>
     </head>
     <body>
@@ -423,9 +425,60 @@
             </form>
         </div>
 
+        <!-- Notation-->
 
+<form name="note_event" id="note_event" action="index.html" method="post"> 
+</br>
+Votre evenement est terminé, veuillez le notez
+          <div id="notation_event" class="bg-success">
+            <h2 class="bg-success" align="center">
+               Cours de Salssa
+            </h2> 
+              <div class="row">
+                   <div class="col-xs-6"> Date: </div>
+                   <div class="col-xs-6">12/12/12</div> 
+              </div>
+</br>  
+            <div class="row">
+                   <div class="col-xs-6"> Note: </div>
+                   <div class="container" >       
+                      <div class='starrr' id='star_event'></div>    
+                   </div>
+            </div> 
+</br> 
+	    <div class="row">
+                   <div class="col-xs-6"> Remarques: </div>
+                   <div class="col-xs-6"> <textarea rows="3" cols="30"> Vos remarques et suggestions sur l'evenement</textarea>
+            </div> 
+            </div>
+         
+        </div>
+Veuillez noter l'organisateur:
+         <div id="notation_organisateur" class="bg-success">
+            <h2 class="bg-success" align="center">
+               Olivier Olivier
+            </h2> 
+               
+            <div class="row">
+                   <div class="col-xs-6"> Note: </div>
+                   <div class="container" >       
+                      <div class='starrr' id='star_organisateur'></div>    
+                   </div>
+            </div> 
+</br> 
+	    <div class="row">
+                   <div class="col-xs-6"> Remarques: </div>
+                   <div class="col-xs-6"> <textarea rows="3" cols="30"> Vos remarques sur l'organisateur</textarea>
+            </div> 
+            </div>
+</br>         
+        </div>
+</br>
+       <div  class="form-group" >
+                        <button value="submit" id="submit_event" class="btn btn-block btn-success">Submit</button>
+                    </div>
 	
-	
+	</form>
        
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -436,6 +489,8 @@
         <script type="text/javascript" src="js/inscriptions.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script src="js/starrr.js"></script>
+        <script src="js/star.js"></script>
 
     </body>
 </html>
