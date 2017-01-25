@@ -12,7 +12,7 @@ $(document).ready(function() {
         $("#desc_organisation").hide();
         $("#div_recherche_avancee").hide();
         $("#desc_utilisateur").hide();
-	$("#div_notation").hide();
+        $("#div_notation").hide();
 
     }
 
@@ -24,6 +24,7 @@ $(document).ready(function() {
 
     $("#displayListing").click(function(){
         initialize();
+        getAllEvents();
         $("#listing_event").show();     
     });
 
@@ -48,7 +49,6 @@ $(document).ready(function() {
 
     $("#foot").click(function(){
         initialize();
-        getAllEvents();
         $("#desc_event").show();
     });
 
@@ -82,9 +82,27 @@ $(document).ready(function() {
 
     //Todo: Gerer resultat query
     function querySuccessAll(tx,results){
-        $.each(results.rows,function(i,e){
-            console.log("res : "+e.nom_event);
-        });
+        var list =
+            $.each(results.rows,function(i,e){
+                var new_event = "<li class = \""+ e.id + "\">"+
+                    "<div class=\"row\">"+
+                    "<div class=\"col-xs-4\"><img src=\"img/default.png\" class=\"img-responsive\" ></div>"+
+                    "<div class=\"col-xs-8\">"+
+                    "<div class=\"row\">"+
+                    "<div class=\"col-xs-12\">"+e.nom_event+"</div>"+
+                    "<div class=\"col-xs-12\">"+e.type_event+"</div>"+
+                    "<div class=\"col-xs-12\">"+e.date_event+"</div>"+
+                    "<div class=\"row\">"+
+                    "<div class=\"col-xs-6\">5*</div>"+
+                    "<div class=\"col-xs-6\">"+e.prix_event+"€</div>"+
+                    "</div>"+
+                    "</div>"+
+                    "</div>"+
+                    "</div></li>";
+
+                console.log(new_event);
+                $("#listing_event ul").append(new_event);
+            });
     }
 
     //Todo: Gerer resultat query
