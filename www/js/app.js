@@ -72,10 +72,11 @@ $(document).ready(function() {
         , errorCB, transacSuccess);
     }
 
-    function getAllEvents(){
+    function getAllEvents(like = "%"){
+        console.log("param : "+like);
         var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
         db.transaction(function(tx){
-            tx.executeSql("Select * FROM events",[],querySuccessAll,errorCB);
+            tx.executeSql("Select * FROM events WHERE (nom_event LIKE ?)",['%'+like+'%'],querySuccessAll,errorCB);
         }
         , errorCB, transacSuccess);
     }
