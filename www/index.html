@@ -16,7 +16,7 @@
     under the License.
 -->
 <html>
-    <head>
+<head>
         <!--
             Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
@@ -44,7 +44,7 @@
             <div class="navbar navbar-inverse">
                 <h6 id="menuBtn">Menu</h6>
                 <img id="logo" src="img/logo.jpg" alt="Logo" class="brand-logo" width="50" height="50">
-		<h6 class="1" id="logged"></h6>
+                <h6 class="1" id="logged"></h6>
             </div>
         </nav>
 
@@ -52,6 +52,8 @@
             <ul>
                 <li><div class="btn" id="displayCreateEvent">Créer événement</div></li>
                 <li><div class="btn" id="displayListing">Résultats recherche</div></li>
+                <li><div class="btn" id="connexion">Connexion</div></li>
+                <li><div class="btn" id="deconnexion">Deconnexion</div></li>
                 <li><div class="btn" id="createOrga">Inscription</div></li>
             </ul>
         </div>
@@ -63,31 +65,31 @@
             <form name="create_event" id="create_event">
                 <div  class="form-group" >
                     <label for="nom_event" >Nom Evenenemt :</label>
-                    <input type="text" name="nom_event" id="nom_event" class="form-control" size="30" maxlength="10" required/>
+                    <input type="text" name="nom_event" id="nom_event" class="form-control" size="30" maxlength="20" required/>
                 </div>
                 <div  class="form-group" >
                     <label for="type_event" >Type :</label>
                     <input type="text" name="type_event" id="type_event" class="form-control" size="30" maxlength="10" required/>
                 </div>
-                    <div  class="form-group" >
-                        <label for="date">Date :</label>
-                        <input type="date" name="date_event" id="date_event" class="form-control" required />
-                    </div>
-                    <div  class="form-group" >
-                        <label for="nbPlace_event">Nombre de places :</label>
-                        <input type="text" name="nbPlace_event" id="nbPlace_event" class="form-control" size="30" maxlength="10" required />
-                    </div>
-                    <div  class="form-group" >
-                        <label for="nom_event">Prix :</label>
-                        <input type="text" name="prix_event" id="prix_event" class="form-control" size="30" maxlength="10" required/>
-                    </div>
-                    <div  class="form-group" >
-                        <label for="description_event">Description :</label>
-                        <textarea rows="4" cols="50" class="form-control" id="description_event"></textarea>
-                    </div>
-                    <div  class="form-group" >
-                        <button value="submit" id="submit_event" class="btn btn-block btn-success">Submit</button>
-                    </div>
+                <div  class="form-group" >
+                    <label for="date">Date :</label>
+                    <input type="date" name="date_event" id="date_event" class="form-control" required />
+                </div>
+                <div  class="form-group" >
+                    <label for="nbPlace_event">Nombre de places :</label>
+                    <input type="text" name="nbPlace_event" id="nbPlace_event" class="form-control" size="30" maxlength="10" required />
+                </div>
+                <div  class="form-group" >
+                    <label for="nom_event">Prix :</label>
+                    <input type="text" name="prix_event" id="prix_event" class="form-control" size="30" maxlength="10" required/>
+                </div>
+                <div  class="form-group" >
+                    <label for="description_event">Description :</label>
+                    <textarea rows="4" cols="50" class="form-control" id="description_event"></textarea>
+                </div>
+                <div  class="form-group" >
+                    <button value="submit" id="submit_event" class="btn btn-block btn-success">Submit</button>
+                </div>
             </form>
         </div>
 
@@ -100,83 +102,52 @@
         <div id="div_create_user">
             <form name="create_user" id="create_user" action="index.html" method="post"> 
 
-             <div class="form-group"> 
-               <label>Type:</label>
-               <select id="type_user" class="form-control">
-                  <option value="" disabled selected>Chooisir le type</option>
-                  <option value="1">Utilisateur</option>
-                  <option value="2">Organisation</option>
+                <div class="form-group"> 
+                    <label>Type:</label>
+                    <select id="type_user" class="form-control">
+                        <option value="" disabled selected>Chooisir le type</option>
+                        <option value="1">Utilisateur</option>
+                        <option value="2">Organisation</option>
+                    </select>       
+                </div>
 
-              </select>       
-          </div>
-
-          <div  class="form-group" >
-            <label for="first_name">Pseudo</label>
-            <input id="pseudo_user" type="text" class="form-control" >          
+                <div  class="form-group" >
+                    <label for="first_name">Pseudo</label>
+                    <input id="pseudo_user" type="text" class="form-control" >          
+                </div>
+                <div class="form-group" >
+                    <label for="first_name">Nom</label>
+                    <input  id="nom_user" type="text" class="form-control" >
+                </div>
+                <div  class="form-group" >
+                    <label for="first_name">Prenom</label>
+                    <input  id="prenom_user" type="text" class="form-control" >
+                </div>
+                <div  class="form-group" >
+                    <label for="email">Email</label>
+                    <input id="email_user" type="email" class="form-control" >
+                </div>
+                <div  class="form-group" >
+                    <label for="password">Mot de passe</label>
+                    <input id="password_user" type="password" class="form-control">
+                </div>
+                <div  class="form-group" >
+                    <label for="password">Confirmer mot de passe</label>
+                    <input id="confirm-password" type="password" class="form-control" >
+                </div>
+                <input id="submit_user" type="submit" value="S'inscrire" class="btn btn-block btn-success">
+            </form>
         </div>
-        <div class="form-group" >
-            <label for="first_name">Nom</label>
-            <input  id="nom_user" type="text" class="form-control" >
-        </div>
-        <div  class="form-group" >
-            <label for="first_name">Prenom</label>
-            <input  id="prenom_user" type="text" class="form-control" >
-        </div>
-        <div  class="form-group" >
-            <label for="email">Email</label>
-            <input id="email_user" type="email" class="form-control" >
-        </div>
-        <div  class="form-group" >
-            <label for="password">Mot de passe</label>
-            <input id="password_user" type="password" class="form-control">
-        </div>
-        <div  class="form-group" >
-            <label for="password">Confirmer mot de passe</label>
-            <input id="confirm-password" type="password" class="form-control" >
-        </div>
-        <input id="submit_user" type="submit" value="S'inscrire" class="btn btn-block btn-success">
-    </form>
-</div>
 
         <!--
             Description evenement
         -->
         <!-- Infos générales -->
-        <div class="2" id="desc_event">
-            <div class="row">
-                <div class="col-xs-8"><b>Foot en salle 5 contre 5</b></div>
-                <div class="col-xs-4">10€</div>
-            </div>
-            <div class="row">
-                <div class="col-xs-4">Football</div>
-                <div class="col-xs-4">12/12/2012</div>
-                <div class="col-xs-4">10 places</div>
-            </div>
+        <div id="desc_event">
+            <!--
+
             </br>
-            <span>
-                Le foot en salle club est heureux de vous proposer une
-                séance d'entrainement de bla bla bla bla bla bla bla bla
-                bla bla bla
-            </span>
-            <!-- Infos organisteur (personne) -->
-            </br>
-            <div class="solid">
-                <div class="row">
-                    <div class="col-xs-4"><img src="" class="img-responsive"></div>
-                    <div class="col-xs-8">
-                        <div class="row">
-                            <div class="col-xs-9">Richard</div>
-                            <div class="col-xs-3">4*</div>
-                        <div class="row">
-                            <div class="col-xs-12 test">
-                                Aime le Karate, le Kung fu, le tai kwendo, le full contact et les fleurs.
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </br>
+
             <div class="solid">
                 <div class="row">
                     <div class="col-xs-4"><img src="" class="img-responsive"></div>
@@ -184,77 +155,28 @@
                         <div class="row">
                             <div class="col-xs-6">Foot en salle club</div>
                             <div class="col-xs-2">5*</div>
-                        <div class="row">
-                            <div class="col-xs-10">
-                               7, rue de la paix, Monopoly 
+                            <div class="row">
+                                <div class="col-xs-10">
+                                 7, rue de la paix, Monopoly 
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-10">
+                                        Super salle de sport, qui est juste trop bien! Je recommande
+                                    </div>
+                                </div>
                             </div>
-                        <div class="row">
-                            <div class="col-xs-10">
-                                Super salle de sport, qui est juste trop bien! Je recommande
-                            </div>
-                        </div>
-                        </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             </br>
-            <button id="submit_inscription" class="btn btn-block btn-success"> S'inscrire</button>
+
+            <button id="submit_inscription" class="btn btn-block btn-success"> S'inscrire</button>-->
         </div>
 
         <div id="listing_event">
             <ul>
-                <li>
-                    <div class="row" id="foot">
-                        <div class="col-xs-4"><img src=""></div>
-                        <div class="col-xs-8">
-                            <div class="row">
-                                <div class="col-xs-12">Foot en salle 5/5</div>
-                                <div class="col-xs-12">Football</div>
-                                <div class="col-xs-12">12/12/2012</div>
-                                <div class="row">
-                                    <div class="col-xs-6">5*</div>
-                                    <div class="col-xs-6">10€</div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <br />
-                <li>
-                    <div class="row">
-                        <div class="col-xs-4"><img src=""></div>
-                        <div class="col-xs-8">
-                            <div class="row">
-                                <div class="col-xs-12">Cours de salsa</div>
-                                <div class="col-xs-12">Danse</div>
-                                <div class="col-xs-12">13/12/2012</div>
-                                <div class="row">
-                                    <div class="col-xs-6">3*</div>
-                                    <div class="col-xs-6">5€</div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <br />                
-                <li>
-                    <div class="row">
-                        <div class="col-xs-4"><img src=""></div>
-                        <div class="col-xs-8">
-                            <div class="row">
-                                <div class="col-xs-12">Course à pied</div>
-                                <div class="col-xs-12">Fitness</div>
-                                <div class="col-xs-12">12/12/2012</div>
-                                <div class="row">
-                                    <div class="col-xs-6">Pas encore noté</div>
-                                    <div class="col-xs-6">Gratuit</div> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
             </ul>
         </div>
 
@@ -264,216 +186,208 @@
 
 
         <div id="div_create_organisation">
-           <form name="create_organisation" id="create_organisation" action="index.html" method="post"> 
+            <form name="create_organisation" id="create_organisation" action="index.html" method="post"> 
 
-            <div class="form-group">
-              <label for="first_name">Nom de l'organisation</label>
-              <input id="nom_organisation" type="text" class="form-control">          
-          </div>
+                <div class="form-group">
+                    <label for="first_name">Nom de l'organisation</label>
+                    <input id="nom_organisation" type="text" class="form-control">          
+                </div>
+                <div class="form-group">
+                    <label for="nom_responsable">Nom Responsable</label>
+                    <input  id="" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="first_name">Membres</label>
+                    <input  id="membres" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input id="password" type="password" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Confirmer mot de passe</label>
+                    <input id="confirm-password" type="password" class="form-control" >
+                </div>  
+                <div class="form-group">
+                    <p>
+                        <input type="checkbox" id="test5" class="form-control" />
+                        <label for="test5">Privée</label>
 
-          <div class="form-group">
-              <label for="nom_responsable">Nom Responsable</label>
-              <input  id="" type="text" class="form-control">
-
-          </div>
-          <div class="form-group">
-              <label for="first_name">Membres</label>
-              <input  id="membres" type="text" class="form-control">
-
-          </div>
-
-          <div class="form-group">
-              <label for="email">Email</label>
-              <input id="email" type="email" class="form-control">
-
-          </div>
-
-          <div class="form-group">
-              <label for="password">Mot de passe</label>
-              <input id="password" type="password" class="form-control">
-
-          </div>
-
-
-          <div class="form-group">
-              <label for="password">Confirmer mot de passe</label>
-              <input id="confirm-password" type="password" class="form-control" >
-
-          </div>  
-          <div class="form-group">
-           <p>
-              <input type="checkbox" id="test5" class="form-control" />
-              <label for="test5">Privée</label>
-
-              <input type="checkbox" id="test6" checked="checked" class="form-control"/>
-              <label for="test6">Etatique</label>
-          </p>  
-      </div>
-      <input type="submit" value="S'inscrire" class="btn btn-block btn-success">
-  </form>
-</div>
+                        <input type="checkbox" id="test6" checked="checked" class="form-control"/>
+                        <label for="test6">Etatique</label>
+                    </p>  
+                </div>
+                <input type="submit" value="S'inscrire" class="btn btn-block btn-success">
+            </form>
+        </div>
 
 
 
 <!--
             Affichage Organisation
-  -->
+        -->
 
 
-	<div id="desc_organisation" class="bg-success">
+        <div id="desc_organisation" class="bg-success">
             <h2 class="bg-success">
-               nom organisation
+                nom organisation
             </h2> 
-              <div class="row">
-                   <div class="col-xs-6"> Note attribué: </div>
-                   <div class="col-xs-6">5 *</div> 
-              </div>  
             <div class="row">
-                   <div class="col-xs-6"> Type: </div>
-                   <div class="col-xs-6">Privée</div> 
+                <div class="col-xs-6"> Note attribué: </div>
+                <div class="col-xs-6">5 *</div> 
             </div>  
-	    <div class="row">
-                   <div class="col-xs-6"> Responsable: </div>
-                   <div class="col-xs-6"> Olivier Olivier</div> 
+            <div class="row">
+                <div class="col-xs-6"> Type: </div>
+                <div class="col-xs-6">Privée</div> 
+            </div>  
+            <div class="row">
+                <div class="col-xs-6"> Responsable: </div>
+                <div class="col-xs-6"> Olivier Olivier</div> 
             </div>
 
-	   <div class="row">
-                   <div class="col-xs-6"> Contact: </div>
-                   <div class="col-xs-6"> Olivier@olivier.com</div> 
+            <div class="row">
+                <div class="col-xs-6"> Contact: </div>
+                <div class="col-xs-6"> Olivier@olivier.com</div> 
             </div>
             <div class="row">
-                   <div class="col-xs-6"> Nombres membres: </div>
-                   <div class="col-xs-6"> Olivier@olivier.com</div> 
+                <div class="col-xs-6"> Nombres membres: </div>
+                <div class="col-xs-6"> Olivier@olivier.com</div> 
             </div>
-           <div class="row">
-                   <div class="col-xs-6"> Description: </div>
-                   <div class="col-xs-6"> Associaltion blab balab balabao</div> 
+            <div class="row">
+                <div class="col-xs-6"> Description: </div>
+                <div class="col-xs-6"> Associaltion blab balab balabao</div> 
             </div>
-	    
-          
-           
         </div>
 
 
 <!--
             Affichage Utilisateur
-  -->
+        -->
 
 
-	<div id="desc_utilisateur" class="bg-success">
+        <div id="desc_utilisateur" class="bg-success">
             <h2 class="bg-success">
                Olivier Oli
             </h2> 
-              <div class="row">
-                   <div class="col-xs-6"> Pseudo: </div>
-                   <div class="col-xs-6">oliveir_olivier</div> 
-              </div>  
             <div class="row">
-                   <div class="col-xs-6"> Type: </div>
-                   <div class="col-xs-6">Utilisateur</div> 
+                <div class="col-xs-6"> Pseudo: </div>
+                <div class="col-xs-6">oliveir_olivier</div> 
             </div>  
-	    <div class="row">
-                   <div class="col-xs-6"> Adresse mail: </div>
-                   <div class="col-xs-6"> Olivier@Olivier.com</div> 
-            </div>
-
-	   <div class="row">
-                   <div class="col-xs-6"> Mot de passe: </div>
-                   <div class="col-xs-6"> *******</div> 
+            <div class="row">
+                <div class="col-xs-6"> Type: </div>
+                <div class="col-xs-6">Utilisateur</div> 
+            </div>  
+            <div class="row">
+                <div class="col-xs-6"> Adresse mail: </div>
+                <div class="col-xs-6"> Olivier@Olivier.com</div> 
             </div>
             <div class="row">
-                   <div class="col-xs-6"> Adresse: </div>
-                   <div class="col-xs-6"> Rue bla bla 35000 </div> 
+                <div class="col-xs-6"> Mot de passe: </div>
+                <div class="col-xs-6"> *******</div> 
             </div>
-           
-	    
-          
-           
+            <div class="row">
+                <div class="col-xs-6"> Adresse: </div>
+                <div class="col-xs-6"> Rue bla bla 35000 </div> 
+            </div>
         </div>
 
-
-<!--
-            Recherche Avancée
+<!--            Recherche 
   -->
+        <div id="recherche_nom" class="form-group">
+            <div  class="form-group" >
+                <input type="text" name="type" id="search_global" class="form-control" size="30" maxlength="15" required />
+            </div>
+            <div>
+                <button id="searchBtn" class="btn btn-block btn-success">Search</button>
+            </div>
+        </div>
 
         <div id="div_recherche_avancee"  class="form-group">
             <form name="recherche_avancee" id="recherche_avancee">
 
-            <h2 align="center">
+            <h3 align="center">
                Recherche Avancée
-            </h2> 
+            </h3> 
                 <div  class="form-group" >
                     <label for="nom_event" >Ville :</label>
                     <input type="text" name="ville" id="ville" class="form-control" size="30" maxlength="15" required/>
                 </div>
 
-                    <div  class="form-group" >
-                        <label for="type">Type :</label>
-                        <input type="text" name="type" id="type" class="form-control" size="30" maxlength="15" required />
-                    </div>
-                    <div  class="form-group" >
-                        <label for="date">Date :</label>
-                        <input type="date" name="date_event" id="date_event" class="form-control" required />
-                    </div>
-                    
-                    <div  class="form-group" >
-                        <label for="prix_event">Prix :</label>
-                        <input type="text" name="prix_event" id="prix_event" class="form-control" size="30" maxlength="10" required/>
-                    </div>
-                    
-                    <div  class="form-group" >
-                        <input type="submit" value="submit" id="submit_event" class="btn btn-block btn-success">
-                    </div>
+                <div  class="form-group" >
+                    <label for="type">Type :</label>
+                    <input type="text" name="type" id="type" class="form-control" size="30" maxlength="15" required />
+                </div>
+                <div  class="form-group" >
+                    <label for="date">Date :</label>
+                    <input type="date" name="date_event" id="date_event" class="form-control" required />
+                </div>
+                <div  class="form-group" >
+                    <label for="prix_event">Prix :</label>
+                    <input type="text" name="prix_event" id="prix_event" class="form-control" size="30" maxlength="10" required/>
+                </div>
+                <div  class="form-group" >
+                    <input type="submit" value="submit" id="submit_event" class="btn btn-block btn-success">
+                </div>
             </form>
         </div>
 
-        <!-- Notation-->
-<div id="div_notation" >
-<form name="note_event" id="note_event" action="index.html" method="post"> 
-</br>
-Votre evenement est terminé, veuillez le notez
-          <div id="notation_event" class="bg-success">
-            <h2 class="bg-success" align="center">
-               Cours de Salssa
-            </h2> 
-              <div class="row">
-                   <div class="col-xs-6"> Date: </div>
-                   <div class="col-xs-6">12/12/12</div> 
-              </div>
-</br>  
-            <div class="row">
-                   <div class="col-xs-6"> Note: </div>
-                   <div class="container" >       
-                      <div class='starrr' id='star_event'></div>    
-                   </div>
-            </div> 
-</br> 
-	    <div class="row">
-                   <div class="col-xs-6"> Remarques: </div>
-                   <div class="col-xs-6"> <textarea rows="3" cols="30"> Vos remarques et suggestions sur l'evenement</textarea>
-            </div> 
-            </div>
-         
-        </div>
-Veuillez noter l'organisateur:
-         <div id="notation_organisateur" class="bg-success">
-            <h2 class="bg-success" align="center">
-               Olivier Olivier
-            </h2> 
-               
-            <div class="row">
-                   <div class="col-xs-6"> Note: </div>
-                   <div class="container" >       
+    <!-- Notation-->
+        <div id="div_notation" >
+            <form name="note_event" id="note_event" action="index.html" method="post"> 
+                </br>
+                <p>Votre evenement est terminé, veuillez le notez</p>
+                <div id="notation_event" class="bg-success">
+                    <h2 class="bg-success" align="center">Cours de Salssa</h2> 
+                    <div class="row">
+                        <div class="col-xs-6"> Date: </div>
+                        <div class="col-xs-6">12/12/12</div> 
+                    </div>
+                    </br>  
+                    <div class="row">
+                        <div class="col-xs-6"> Note: </div>
+                        <div class="container" >       
+                            <div class='starrr' id='star_event'></div>    
+                        </div>
+                    </div> 
+                    </br> 
+                    <div class="row">
+                         <div class="col-xs-6"> Remarques: </div>
+                         <div class="col-xs-6"> 
+                            <textarea rows="3" cols="30"> Vos remarques et suggestions sur l'evenement</textarea>
+                         </div> 
+                    </div>
+                </div>
+            Veuillez noter l'organisateur:
+            <div id="notation_organisateur" class="bg-success">
+                <h2 class="bg-success" align="center">
+                 Olivier Olivier
+             </h2> 
+
+                 <div class="row">
+                     <div class="col-xs-6"> Note: </div>
+                     <div class="container" >       
                       <div class='starrr' id='star_organisateur'></div>    
-                   </div>
-            </div> 
-</br> 
-	    <div class="row">
-                   <div class="col-xs-6"> Remarques: </div>
-                   <div class="col-xs-6"> <textarea rows="3" cols="30"> Vos remarques sur l'organisateur</textarea>
-            </div> 
+                  </div>
+                </div> 
+            </br> 
+            <div class="row">
+             <div class="col-xs-6"> Remarques: </div>
+             <div class="col-xs-6"> <textarea rows="3" cols="30"> Vos remarques sur l'organisateur</textarea>
+             </div> 
             </div>
-</br>         
+            </br>         
+            </div>
+            </br>
+                <div  class="form-group" >
+                    <button value="submit" id="submit_event" class="btn btn-block btn-success">Submit</button>
+                </div>
+
+            </form>
+
         </div>
 </br>
        <div  class="form-group" >
@@ -486,7 +400,7 @@ Veuillez noter l'organisateur:
 
 <!-- Le google Map -->
 
-<div id="map" style="width:400px;height:400px;">
+<div id="map" style="width:400px;height:400px;"></div>
        
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -497,6 +411,7 @@ Veuillez noter l'organisateur:
         <script type="text/javascript" src="js/inscriptions.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/connexion.js"></script>
         <script src="js/starrr.js"></script>
         <script src="js/star.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJgtW7cXAqp0TJ-aX4K7xpnx9aVVorvs8"></script>
