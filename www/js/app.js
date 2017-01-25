@@ -10,11 +10,9 @@ $(document).ready(function() {
         $("#menu").hide();
         $("#div_create_organisation").hide();
         $("#desc_organisation").hide();
-        $("#div_recherche_avancee").hide();
         $("#desc_utilisateur").hide();
         $("#div_notation").hide();
         $("#map").hide();
-
     }
 
     initialize();
@@ -45,6 +43,14 @@ $(document).ready(function() {
             $("#div_create_organisation").show();
         else
             $("#div_create_user").show();
+    });
+
+
+    $("#searchBtn").click(function(){
+        getAllEvents($("#search_global").val());
+        $("#recherche_nom").hide();
+        $("#div_recherche_avancee").hide();
+        $("#listing_event").show();
     });
 
     $("#menuBtn").click(function(){
@@ -81,42 +87,39 @@ $(document).ready(function() {
     	$("#desc_event").show();
     }
 
-    function getAllEvents(){
+    function getAllEvents(like = "%"){
+        var search = '%'+like+'%';
+        console.log("param : "+search);
         var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
         db.transaction(function(tx){
-            tx.executeSql("Select * FROM events",[],querySuccessAll,errorCB);
+            tx.executeSql("Select * FROM events WHERE (nom_event LIKE ?) OR (type_event LIKE ?) OR (location_event LIKE ?) OR (description_event LIKE ?)",[search,search,search,search],querySuccessAll,errorCB);
         }
         , errorCB, transacSuccess);
     }
 
     //Todo: Gerer resultat query
     function querySuccessAll(tx,results){
-        $.each(results.rows,function(i,e){
-            var new_event = "<li class = \""+ e.id + "\">"+
-                "<div class=\"row\">"+
-                "<div class=\"col-xs-4\"><img src=\"img/default.png\" class=\"img-responsive\" ></div>"+
-                "<div class=\"col-xs-8\">"+
-                "<div class=\"row\">"+
-                "<div class=\"col-xs-12\">"+e.nom_event+"</div>"+
-                "<div class=\"col-xs-12\">"+e.type_event+"</div>"+
-                "<div class=\"col-xs-12\">"+e.date_event+"</div>"+
-                "<div class=\"row\">"+
-                "<div class=\"col-xs-6\">5*</div>"+
-                "<div class=\"col-xs-6\">"+e.prix_event+"€</div>"+
-                "</div>"+
-                "</div>"+
-                "</div>"+
-                "</div></li>";
+            $.each(results.rows,function(i,e){
+                var new_event = "<li class=\""+ e.id +"\">"+
+                    "<div class=\"row\">"+
+                        "<div class=\"col-xs-4\"><img src=\"img/default.png\" class=\"img-responsive\" ></div>"+
+                        "<div class=\"col-xs-8\">"+
+                            "<div class=\"row\">"+
+                                "<div class=\"col-xs-12\">"+e.nom_event+"</div>"+
+                                "<div class=\"col-xs-12\">"+e.type_event+"</div>"+
+                                "<div class=\"col-xs-12\">"+e.date_event+"</div>"+
+                            "</div>"+
+                            "<div class=\"row\">"+
+                                "<div class=\"col-xs-6\">5*</div>"+
+                                "<div class=\"col-xs-6\">"+e.prix_event+"€</div>"+
+                            "</div>"+
+                        "</div>"+
+                    "</div>"+
+                    "</li>";
 
-            console.log(new_event);
-            $("#listing_event ul").append(new_event);
-        });
-
-        $("#listing_event ul li").click(function(){
-    	initialize();
-    	console.log("test");
-    	getEvent($(this).attr("class"));
-    });
+                console.log(new_event);
+                $("#listing_event ul").append(new_event);
+            });
     }
 
     //Todo: Gerer resultat query

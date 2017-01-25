@@ -52,6 +52,8 @@
             <ul>
                 <li><div class="btn" id="displayCreateEvent">Créer événement</div></li>
                 <li><div class="btn" id="displayListing">Résultats recherche</div></li>
+                <li><div class="btn" id="connexion">Connexion</div></li>
+                <li><div class="btn" id="deconnexion">Deconnexion</div></li>
                 <li><div class="btn" id="createOrga">Inscription</div></li>
             </ul>
         </div>
@@ -63,7 +65,7 @@
             <form name="create_event" id="create_event">
                 <div  class="form-group" >
                     <label for="nom_event" >Nom Evenenemt :</label>
-                    <input type="text" name="nom_event" id="nom_event" class="form-control" size="30" maxlength="10" required/>
+                    <input type="text" name="nom_event" id="nom_event" class="form-control" size="30" maxlength="20" required/>
                 </div>
                 <div  class="form-group" >
                     <label for="type_event" >Type :</label>
@@ -308,16 +310,23 @@
             </div>
         </div>
 
-
-<!--
-            Recherche Avancée
-        -->
+<!--            Recherche 
+  -->
+  <div id="recherche_nom" class="form-group">
+                    <div  class="form-group" >
+                        <input type="text" name="type" id="search_global" class="form-control" size="30" maxlength="15" required />
+                    </div>
+                    <div>
+                        <button id="searchBtn" class="btn btn-block btn-success">Search</button>
+                    </div>
+  </div>
 
         <div id="div_recherche_avancee"  class="form-group">
             <form name="recherche_avancee" id="recherche_avancee">
-                <h2 align="center">
-                   Recherche Avancée
-                </h2> 
+
+            <h3 align="center">
+               Recherche Avancée
+            </h3> 
                 <div  class="form-group" >
                     <label for="nom_event" >Ville :</label>
                     <input type="text" name="ville" id="ville" class="form-control" size="30" maxlength="15" required/>
@@ -395,23 +404,32 @@
             </form>
 
         </div>
+</br>
+       <div  class="form-group" >
+                        <button value="submit" id="submit_event" class="btn btn-block btn-success">Submit</button>
+                    </div>
+	
+	</form>
 
-<div id="map" style="width:400px;height:400px;"></div>
+</div>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/dao.js"></script>
-<script type="text/javascript" src="js/event.js"></script>
-<script type="text/javascript" src="js/users.js"></script>
-<script type="text/javascript" src="js/inscriptions.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script src="js/starrr.js"></script>
-<script src="js/star.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJgtW7cXAqp0TJ-aX4K7xpnx9aVVorvs8"></script>
-<script src="js/custom.js"></script>
+<div id="map" style="width:400px;height:400px;">
+       
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/dao.js"></script>
+        <script type="text/javascript" src="js/event.js"></script>
+        <script type="text/javascript" src="js/users.js"></script>
+        <script type="text/javascript" src="js/inscriptions.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/connexion.js"></script>
+        <script src="js/starrr.js"></script>
+        <script src="js/star.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJgtW7cXAqp0TJ-aX4K7xpnx9aVVorvs8"></script>
+        <script src="js/custom.js"></script>
 
-</body>
+    </body>
 </html>
 
