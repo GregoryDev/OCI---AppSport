@@ -20,12 +20,13 @@ $(document).ready(function() {
         db.transaction(insertEvent, errorCB, querySuccess);
     })
     function insertEvent(tx) {
-        tx.executeSql('INSERT INTO events (nom_event, type_event, date_event, nbPlace_event, prix_event, description_event) VALUES ("' +
-                    document.getElementById("nom_event").value +'","'+
-                    document.getElementById("type_event").value +'","'+
-                    document.getElementById("date_event").value +'","'+
-                    document.getElementById("nbPlace_event").value +'","'+
-                    document.getElementById("prix_event").value +'","'+
-                    document.getElementById("description_event").value+'")');
+        tx.executeSql('INSERT INTO events (nom_event, type_event, date_event, nbPlace_event, prix_event, description_event, creator_event) VALUES ("' +
+                    $("#nom_event").value +'","'+
+                    $("#type_event").value +'","'+
+                    $("#date_event").value +'","'+
+                    $("#nbPlace_event").value +'","'+
+                    $("#prix_event").value +'","'+
+                    $("#description_event").value +'","'+
+                    $("#logged").attr("class")+'")');
     }
 });
