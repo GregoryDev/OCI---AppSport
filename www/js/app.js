@@ -12,6 +12,8 @@ $(document).ready(function() {
         $("#desc_organisation").hide();
         $("#div_recherche_avancee").hide();
         $("#desc_utilisateur").hide();
+	$("#div_notation").hide();
+
     }
 
     initialize();
