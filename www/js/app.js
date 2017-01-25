@@ -68,7 +68,7 @@ $(document).ready(function() {
         var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
         db.transaction(function(tx){
             console.log("getEvents : "+id+"/"+tx);
-            tx.executeSql("Select * FROM events WHERE id=?",[id],getEventSuccess,errorCB);
+            tx.executeSql("Select e.*, u.* FROM events e, users u WHERE e.creator_event=u.id AND e.id=?",[id],getEventSuccess,errorCB);
         }
         , errorCB, transacSuccess);
     }
@@ -81,8 +81,11 @@ $(document).ready(function() {
     	'<div class="col-xs-4">'+e.prix_event+'</div></div>'+
     	'<div class="row"><div class="col-xs-4">'+e.type_event+'</div>'+
     	'<div class="col-xs-4">'+e.date_event+'</div><div class="col-xs-4">'+e.nbPlace_event+'</div></div></br>'+
-    	'<span>'+e.description_event+'</span></br>';
-    	console.log(str);
+    	'<div class="row"><div class="col-xs-12">'+e.description_event+'</div></div></br>'+
+    	'<div class="solid"><div class="row"><div class="col-xs-4"><img src="img/default.png" class="img-responsive"></div>'+
+    	'<div class="col-xs-8"><div class="row"><div class="col-xs-9">'+e.nom_user+'</div><div class="col-xs-3">4*</div>'+
+    	'</div></div></div></div>';
+    	
     	$("#desc_event").append(str);
     	$("#desc_event").show();
     }
@@ -119,6 +122,10 @@ $(document).ready(function() {
 
                 console.log(new_event);
                 $("#listing_event ul").append(new_event);
+            });
+            $("#listing_event ul li").click(function(){
+            	initialize();
+            	getEvent($(this).attr("class"));
             });
     }
 
