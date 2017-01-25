@@ -2,8 +2,18 @@ $(function () {
 
     function initMap() {
 
-        var location = new google.maps.LatLng(48.1119800, -1.6742900);
+var a=0;
+var b=0;
 
+	 var geocoder;
+         geocoder.geocode( { 'address': "Paris"}, function(results, status) {
+       
+ 
+        }
+
+var location = new google.maps.LatLng(a, b);
+
+        //var location = new google.maps.LatLng(48.1119800, -1.6742900);
         var mapCanvas = document.getElementById('map');
         var mapOptions = {
             center: location,
@@ -14,7 +24,7 @@ $(function () {
         }
         var map = new google.maps.Map(mapCanvas, mapOptions);
 
-        var markerImage = 'marker.png';
+        var markerImage = 'img/marker.png';
 
         var marker = new google.maps.Marker({
             position: location,
