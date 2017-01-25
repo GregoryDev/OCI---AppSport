@@ -352,15 +352,23 @@
 
 
 <!--
-            Recherche Avancée
+            Recherche 
   -->
+  <div id="recherche_nom" class="form-group">
+                    <div  class="form-group" >
+                        <input type="text" name="type" id="search_global" class="form-control" size="30" maxlength="15" required />
+                    </div>
+                    <div>
+                        <button id="searchBtn" class="btn btn-block btn-success">Search</button>
+                    </div>
+  </div>
 
         <div id="div_recherche_avancee"  class="form-group">
             <form name="recherche_avancee" id="recherche_avancee">
 
-            <h2 align="center">
+            <h3 align="center">
                Recherche Avancée
-            </h2> 
+            </h3> 
                 <div  class="form-group" >
                     <label for="nom_event" >Ville :</label>
                     <input type="text" name="ville" id="ville" class="form-control" size="30" maxlength="15" required/>
