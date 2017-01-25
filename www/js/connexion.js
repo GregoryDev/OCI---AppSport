@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     // Deconnexion
     $("#deconnexion").click(function () {
-	//
+	$("#logged").attr("class", "-1");
     })
 });
 
