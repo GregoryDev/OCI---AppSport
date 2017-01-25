@@ -6,7 +6,7 @@ $(document).ready(function() {
         // Cordova is ready
         function onDeviceReady() {
             var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
-	        //db.transaction(dropIt, errorCB, successCB);
+	    //db.transaction(dropIt, errorCB, successCB);
             db.transaction(populateDB, errorCB, successCB);
         }
 
