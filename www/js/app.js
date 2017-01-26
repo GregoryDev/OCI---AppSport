@@ -13,6 +13,7 @@ $(document).ready(function() {
         $("#desc_utilisateur").hide();
         $("#div_notation").hide();
         $("#map").hide();
+        $("#gestion_inscription").hide();
         $("#div_profil").hide();
         $("#recherche_nom").hide();
         $("#div_recherche_avancee").hide();
