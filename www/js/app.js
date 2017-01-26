@@ -117,13 +117,15 @@ $(document).ready(function() {
     	'<div class="row"><div class="col-xs-12">'+e.description_event+'</div></div></br>'+
     	'<div class="solid"><div class="row"><div class="col-xs-4"><img src="img/default.png" class="img-responsive"></div>'+
     	'<div class="col-xs-8"><div class="row"><div class="col-xs-9">'+e.nom_user+'</div><div class="col-xs-3">4*</div>'+
-    	'</div></div></div></div>';
+    	'</div></div></div></div>'+
+	'<div id="desc_location">'+ e.location_event +'</div>';
     	
             console.log(($("#logged").attr("class") != "-1"));
     	$("#desc_event").append(str);
         if($("#logged").attr("class") != "-1"){
             $("#desc_event").append("<button id=\"submit_inscription\" class=\"btn btn-block btn-success\"> S'inscrire</button>");
         }
+        $("#desc_event").append("<button id=\"display_map\" class=\"btn btn-block btn-info\"> Map </button>");
     	$("#desc_event").show();
     }
 

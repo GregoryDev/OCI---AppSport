@@ -1,5 +1,10 @@
 var geocoder;
 var map;
+
+$("#display_map").click(function () {
+	$("#map_location").val() = 
+}
+
 // initialisation de la carte Google Map de départ
 function initialiserCarte() {
   geocoder = new google.maps.Geocoder();
