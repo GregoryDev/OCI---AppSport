@@ -172,6 +172,7 @@ $(document).ready(function() {
     }
 
     function getMyEventsSuccess(tx, results){
+    	$("#myEvents").html("");
     	$.each(results.rows, function(i,e){
     		$("#myEvents ul").append("<li>"+e.nom_event+"</li><br />");
     	});
