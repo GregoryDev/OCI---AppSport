@@ -55,6 +55,16 @@
                 <li><div class="btn" id="connexion">Connexion</div></li>
                 <li><div class="btn" id="deconnexion">Deconnexion</div></li>
                 <li><div class="btn" id="createOrga">Inscription</div></li>
+                <li><div class="btn" id="profil">Profil</div></li>
+            </ul>
+        </div>
+
+
+        <div id="div_profil" class ="form-group">
+            <ul>
+                <li><button class="btn btn-block btn-info" id="">Mon profil</button></li>
+                <li><button class="btn btn-block btn-info" id="">Mes evenements</button></li>
+                <li><button class="btn btn-block btn-info" id="">Mes inscriptions</button></li>
             </ul>
         </div>
 
@@ -74,6 +84,14 @@
                 <div  class="form-group" >
                     <label for="date">Date :</label>
                     <input type="date" name="date_event" id="date_event" class="form-control" required />
+                </div>
+                <div  class="form-group" >
+                    <label for="location_event" >Adresse :</label>
+                    <input type="text" name="location_event" id="location_event" class="form-control" size="30" maxlength="30" required/>
+                </div>
+                <div  class="form-group" >
+                    <label for="teacher_event" >Encadrant :</label>
+                    <input type="text" name="teacher_event" id="teacher_event" class="form-control" size="30" maxlength="10" required/>
                 </div>
                 <div  class="form-group" >
                     <label for="nbPlace_event">Nombre de places :</label>
@@ -390,11 +408,6 @@
 
         </div>
 </br>
-       <div  class="form-group" >
-                        <button value="submit" id="submit_event" class="btn btn-block btn-success">Submit</button>
-       </div>
-	
-	</form>
 
 </div>
 
