@@ -19,6 +19,7 @@ $(document).ready(function() {
         $("#recherche_nom").hide();
         $("#div_recherche_avancee").hide();
         $("#myEvents").hide();
+        $("#div_connexion").hide();
     }
 
     initialize();
@@ -38,6 +39,11 @@ $(document).ready(function() {
         $("#recherche_nom").show();
         $("#div_recherche_avancee").show();
     });
+    $("#search_co").click(function(){
+        initialize();
+        $("#recherche_nom").show();
+        $("#div_recherche_avancee").show();
+    });
 
     $("#displayCreateEvent").click(function(){
         initialize();
@@ -47,6 +53,11 @@ $(document).ready(function() {
     $("#createOrga").click(function(){
         initialize();
         $("#div_create_user").show();
+    });
+
+    $("#connexion").click(function(){
+        initialize();
+        $("#div_connexion").show();
     });
 
     $("#select").change(function(){
