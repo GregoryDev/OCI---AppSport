@@ -34,6 +34,7 @@ var adresse = document.getElementById('map_location').value;
       alert('Adresse introuvable: ' + status);
     }
   });
+$("#map").hide();
 }
 // Lancement de la construction de la carte google map
 google.maps.event.addDomListener(window, 'load', initialiserCarte);
