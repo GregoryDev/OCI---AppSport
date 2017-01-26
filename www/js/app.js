@@ -13,13 +13,22 @@ $(document).ready(function() {
         $("#desc_utilisateur").hide();
         $("#div_notation").hide();
         $("#map").hide();
+        $("#div_profil").hide();
+        $("#recherche_nom").hide();
+        $("#div_recherche_avancee").hide();
     }
 
     initialize();
+        $("#recherche_nom").show();
 
     $("#logo").click(function(){
         initialize();
     })
+
+    $("#profil").click(function(){
+        initialize();
+        $("#div_profil").show();
+    });
 
     $("#displayListing").click(function(){
         initialize();
@@ -48,8 +57,6 @@ $(document).ready(function() {
 
     $("#searchBtn").click(function(){
         getAllEvents($("#search_global").val());
-        $("#recherche_nom").hide();
-        $("#div_recherche_avancee").hide();
         $("#listing_event").show();
     });
 
