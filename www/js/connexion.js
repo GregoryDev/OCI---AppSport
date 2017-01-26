@@ -10,10 +10,21 @@ $(document).ready(function() {
     }
 
     // Connexion
-    $("#connexion").click(function goInsertUser() {
+    $("#submit_connexion").click(function () {
+	var pseudo = $("#connexion_pseudo").val();
         var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
-        db.transaction(insertUser, errorCB, querySuccess);
+        db.transaction(function(tx){
+            console.log("Connexion : user " + pseudo);
+            tx.executeSql("SELECT password_user,id FROM users WHERE pseudo_user=?",[pseudo],verifyConnexion,errorCB);
+        }
+        , errorCB, querySuccess);
     })
+    function verifyConnexion (tx, results) {
+	var res = results.rows[0];
+	if ($("#connexion_password").val() == res.password_user) {
+            $("#logged").attr("class", res.id);	
+	}
+    }
 
     // Deconnexion
     $("#deconnexion").click(function () {
