@@ -107,7 +107,7 @@ $(document).ready(function() {
 
     function getEventSuccess(tx, results){
     	console.log(results);
-    	$("#desc_event").html("");
+    	$("#desc_event").html("<button id=\"submit_inscription\" class=\"btn btn-block btn-success\"> S'inscrire</button>");
     	e = results.rows[0];
     	var str = '<div class="row">'+
     	'<div class="col-xs-8"><b>'+e.nom_event+'</b></div>'+
@@ -119,7 +119,7 @@ $(document).ready(function() {
     	'<div class="col-xs-8"><div class="row"><div class="col-xs-9">'+e.nom_user+'</div><div class="col-xs-3">4*</div>'+
     	'</div></div></div></div>';
     	
-    	$("#desc_event").append(str);
+    	$("#desc_event").prepend(str);
     	$("#desc_event").show();
     }
 
