@@ -16,8 +16,8 @@ function initialiserCarte() {
  
 function TrouverAdresse() {
 
-var adresse = "paris";  
-//var adresse = document.getElementById('adresse').value;
+
+var adresse = document.getElementById('map_location').value;
   geocoder.geocode( { 'address': adresse}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);
