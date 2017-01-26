@@ -82,6 +82,7 @@ $(document).ready(function() {
 
     function getEventSuccess(tx, results){
     	console.log(results);
+    	$("#desc_event").html("");
     	e = results.rows[0];
     	var str = '<div class="row">'+
     	'<div class="col-xs-8"><b>'+e.nom_event+'</b></div>'+
@@ -109,6 +110,7 @@ $(document).ready(function() {
 
     //Todo: Gerer resultat query
     function querySuccessAll(tx,results){
+            $("#listing_event ul").html("");
             $.each(results.rows,function(i,e){
                 var new_event = "<li class=\""+ e.id +"\">"+
                     "<div class=\"row\">"+
