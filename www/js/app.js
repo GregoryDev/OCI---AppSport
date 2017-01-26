@@ -27,6 +27,7 @@ $(document).ready(function() {
 
     $("#logo").click(function(){
         initialize();
+        $("#recherche_nom").show();
     })
 
     $("#profil").click(function(){
