@@ -16,6 +16,7 @@ $(document).ready(function() {
         $("#div_profil").hide();
         $("#recherche_nom").hide();
         $("#div_recherche_avancee").hide();
+        $("#myEvents").hide();
     }
 
     initialize();
@@ -153,5 +154,25 @@ $(document).ready(function() {
     // Transaction error callback
     function errorCB(err) {
         alert("Error processing SQL: "+err.code + ": " + err.message);
+    }
+
+    $("#myEventsBtn").click(function(){
+    	initialize();
+    	$("#myEvents").show();
+    	getMyEvents($("#logged").attr("class"));
+    });
+
+    function getMyEvents(id){
+        var db = window.openDatabase("Database", "1.0", "AppSport", 2000000);
+        db.transaction(function(tx){
+            tx.executeSql("SELECT * FROM events WHERE creator_event=?",[id],getMyEventsSuccess,errorCB);
+        }
+        , errorCB, transacSuccess);	
+    }
+
+    function getMyEventsSuccess(tx, results){
+    	$.each(results.rows, function(i,e){
+    		$("#myEvents ul").append("<li>"+e.nom_event+"</li><br />");
+    	});
     }
 });
