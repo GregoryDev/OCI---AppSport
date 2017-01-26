@@ -1,57 +1,39 @@
-$(function () {
-
-    function initMap() {
-/*
-var a=0;
-var b=0;
-
-	 var geocoder;
-         geocoder.geocode( { 'address': "Paris"}, function(results, status) {
-       
+var geocoder;
+var map;
+// initialisation de la carte Google Map de départ
+function initialiserCarte() {
+  geocoder = new google.maps.Geocoder();
+  // Ici j'ai mis la latitude et longitude du vieux Port de Marseille pour centrer la carte de départ
+  var latlng = new google.maps.LatLng(43.295309,5.374457);
+  var mapOptions = {
+    zoom      : 14,
+    center    : latlng,
+    mapTypeId : google.maps.MapTypeId.ROADMAP
+  }
+  // map-canvas est le conteneur HTML de la carte Google Map
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
  
-        }
+function TrouverAdresse() {
 
-var location = new google.maps.LatLng(a, b); */
-
-        var location = new google.maps.LatLng(48.1119800, -1.6742900);
-        var mapCanvas = document.getElementById('map');
-        var mapOptions = {
-            center: location,
-            zoom: 16,
-            panControl: false,
-            scrollwheel: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-
-        var markerImage = 'img/marker.png';
-
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map,
-            icon: markerImage
-        });
-
-        var contentString = '<div class="info-window">' +
-                '<h3>Info Window Content</h3>' +
-                '<div class="info-content">' +
-                '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>' +
-                '</div>' +
-                '</div>';
-
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 400
-        });
-
-        marker.addListener('click', function () {
-            infowindow.open(map, marker);
-        });
-
-        
-
-
+var adresse = "paris";  
+//var adresse = document.getElementById('adresse').value;
+  geocoder.geocode( { 'address': adresse}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      // Récupération des coordonnées GPS du lieu tapé dans le formulaire
+      var strposition = results[0].geometry.location+"";
+      strposition=strposition.replace('(', '');
+      strposition=strposition.replace(')', '');
+      // Création du marqueur du lieu (épingle)
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Adresse introuvable: ' + status);
     }
-
-    google.maps.event.addDomListener(window, 'load', initMap);
-});
+  });
+}
+// Lancement de la construction de la carte google map
+google.maps.event.addDomListener(window, 'load', initialiserCarte);

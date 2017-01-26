@@ -1,5 +1,6 @@
 body {
   background-color: #e0e0e0;
+  padding: 0 10px;
 }
 nav img {
   margin-top: 3px; 
@@ -17,14 +18,17 @@ a.btn {
 #menu{
 	width: 50%;
 	height: 100%;
+	margin: 0 -10px;
 }
 #menu ul{
+	margin-top: -20px;
 	padding-left: 0;
 	padding-top: 0;
 }
 nav {
 	text-align: center;
-	height: 55px;
+	height: 100%;
+  	margin: 0 -10px;
 }
 ul {
 	list-style-type: none;
