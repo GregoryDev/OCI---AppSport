@@ -7,7 +7,8 @@ $(document).ready(function() {
         $("#desc_event").hide();
         $("#listing_event").hide();
         $("#div_create_user").hide();
-        $("#menu").hide();
+        $("#menu_co").hide();
+        $("#menu_deco").hide();
         $("#div_create_organisation").hide();
         $("#desc_organisation").hide();
         $("#desc_utilisateur").hide();
@@ -32,10 +33,10 @@ $(document).ready(function() {
         $("#div_profil").show();
     });
 
-    $("#displayListing").click(function(){
+    $("#search").click(function(){
         initialize();
-        getAllEvents();
-        $("#listing_event").show();     
+        $("#recherche_nom").show();
+        $("#div_recherche_avancee").show();
     });
 
     $("#displayCreateEvent").click(function(){
@@ -64,11 +65,21 @@ $(document).ready(function() {
 
     $("#menuBtn").click(function(){
         if(open){
-            $("#menu").hide();
             open = false;
+            if($("#logged").attr("class") == "-1"){
+                $("#menu_deco").hide();
+             }
+            else{
+                $("#menu_co").hide();
+            }
         } else {
-            $("#menu").show();
             open = true;
+            if($("#logged").attr("class") == "-1"){
+                $("#menu_deco").show();
+             }
+            else{
+                $("#menu_co").show();
+            }
         }
     })
 

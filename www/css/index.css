@@ -36,7 +36,8 @@ ul {
 li{
 	background-color: #EEE;
 }
-#menu li{
+
+.menu li{
 	background-color: #222;
 	color:white;
 	border: 1px solid #444;
