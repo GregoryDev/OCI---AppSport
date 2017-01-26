@@ -1,4 +1,24 @@
 $(document).ready(function() {
+
+        function initialize(){      
+        $("#div_create_event").hide();
+        $("#desc_event").hide();
+        $("#listing_event").hide();
+        $("#div_create_user").hide();
+        $("#menu_co").hide();
+        $("#menu_deco").hide();
+        $("#div_create_organisation").hide();
+        $("#desc_organisation").hide();
+        $("#desc_utilisateur").hide();
+        $("#div_notation").hide();
+        $("#map").hide();
+        $("#gestion_inscription").hide();
+        $("#div_profil").hide();
+        $("#recherche_nom").hide();
+        $("#div_recherche_avancee").hide();
+        $("#myEvents").hide();
+        $("#div_connexion").hide();
+    }
     // Query the success callback
     function querySuccess(tx, results) {
         console.log(results);
@@ -22,7 +42,9 @@ $(document).ready(function() {
     function verifyConnexion (tx, results) {
 	var res = results.rows[0];
 	if ($("#connexion_password").val() == res.password_user) {
-            $("#logged").attr("class", res.id);	
+            $("#logged").attr("class", res.id);
+            initialize();
+            $("#recherche_nom").show();
 	}
     }
 
@@ -30,6 +52,8 @@ $(document).ready(function() {
     $("#deconnexion").click(function () {
         $("#menu_co").hide();
 	    $("#logged").attr("class", "-1");
+        initialize();
+        $("#recherche_nom").show();
     })
 });
 
