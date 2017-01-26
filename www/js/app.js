@@ -13,13 +13,23 @@ $(document).ready(function() {
         $("#desc_utilisateur").hide();
         $("#div_notation").hide();
         $("#map").hide();
+        $("#gestion_inscription").hide();
+        $("#div_profil").hide();
+        $("#recherche_nom").hide();
+        $("#div_recherche_avancee").hide();
     }
 
     initialize();
+        $("#recherche_nom").show();
 
     $("#logo").click(function(){
         initialize();
     })
+
+    $("#profil").click(function(){
+        initialize();
+        $("#div_profil").show();
+    });
 
     $("#displayListing").click(function(){
         initialize();
@@ -48,8 +58,6 @@ $(document).ready(function() {
 
     $("#searchBtn").click(function(){
         getAllEvents($("#search_global").val());
-        $("#recherche_nom").hide();
-        $("#div_recherche_avancee").hide();
         $("#listing_event").show();
     });
 
@@ -75,6 +83,7 @@ $(document).ready(function() {
 
     function getEventSuccess(tx, results){
     	console.log(results);
+    	$("#desc_event").html("");
     	e = results.rows[0];
     	var str = '<div class="row">'+
     	'<div class="col-xs-8"><b>'+e.nom_event+'</b></div>'+
@@ -102,6 +111,7 @@ $(document).ready(function() {
 
     //Todo: Gerer resultat query
     function querySuccessAll(tx,results){
+            $("#listing_event ul").html("");
             $.each(results.rows,function(i,e){
                 var new_event = "<li class=\""+ e.id +"\">"+
                     "<div class=\"row\">"+
